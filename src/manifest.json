@@ -1,0 +1,16 @@
+{
+    "name": "s3lm",
+    "description": "S3 browser",
+    "version": @version,
+    "manifest_version": 2,
+    "app": {
+        "background": {
+            "page": "background/background.html"
+        }
+    },
+    "icons": { "16": "gui/images/logo-16.png"
+             , "128": "gui/images/logo-128.png"},
+    "permissions": [
+        "storage"
+    ]
+}
