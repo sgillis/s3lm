@@ -1,27 +1,19 @@
-module Gui where
+module Main where
 
-import Signal exposing (..)
-import Html exposing (..)
+import StartApp
+import Html exposing (Html)
+
+import Gui exposing (init, update, view, Model)
 
 
-type alias GuiState = { seconds : Int }
+app : StartApp.App Model
+app = StartApp.start
+    { init = init
+    , update = update
+    , view = view
+    , inputs = []
+    }
 
-initialGuiState : GuiState
-initialGuiState = { seconds = 0 }
-
-type GuiAction = NoOp
-
-update : GuiAction -> GuiState -> GuiState
-update a s = s
-
-view : GuiState -> Html
-view s = div [ ] [ text "s3lm" ]
 
 main : Signal Html
-main = map view state
-
-state : Signal GuiState
-state = foldp update initialGuiState actions.signal
-
-actions : Mailbox GuiAction
-actions = mailbox NoOp
+main = app.html

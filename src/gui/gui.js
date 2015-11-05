@@ -1,1 +1,1 @@
-var gui = Elm.fullscreen(Elm.Gui, {});
+var gui = Elm.fullscreen(Elm.Main, {});
